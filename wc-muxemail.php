@@ -23,8 +23,6 @@ if(!defined('MEW_PLUGIN_ABSOLUTE_PATH'))
     define('MEW_PLUGIN_ABSOLUTE_PATH',plugin_dir_url(__FILE__));
 if (!defined('MEW_PLUGIN_ADMIN_DIR'))
     define( 'MEW_PLUGIN_ADMIN_DIR', dirname(__FILE__) . '/admin' );
-if (!defined('MEW_TEXT_DOMAIN'))
-    define( 'MEW_TEXT_DOMAIN', 'MEW' );
 
 if( !class_exists('WC_Mux_Email') ) {
     class WC_Mux_Email{
@@ -41,9 +39,11 @@ if( !class_exists('WC_Mux_Email') ) {
             }else{
                 add_action( 'admin_notices',[&$this,'add_notice_for_woocommerce']);
             }
-
+            add_action('init',[&$this,'load_mew_language_file']);
         }
-       
+       public function load_mew_language_file(){
+        load_plugin_textdomain( 'mew', false, basename( dirname( __FILE__ ) ) . '/languages' );
+       }
         public function add_setting_link($links){
             array_unshift($links, '<a href="' .
                 admin_url( 'admin.php?page=mew-options' ) .

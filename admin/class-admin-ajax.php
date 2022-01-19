@@ -39,7 +39,6 @@ if ( ! class_exists( 'MEW_Admin_Ajax' ) ) {
             check_ajax_referer( 'mew-attribute-nonce', 'security' );
             MEW_Common_Functions::parse(urldecode($_POST['mew_attrs']),$mewAttrs);
             MEW_Common_Functions::parse(urldecode($_POST['woo_attrs']),$wooAttrs);
-            //print_r($mewAttrs);exit;
             $mewAttrs=$mewAttrs['mew_attributes'];
             $wooAttrs=$wooAttrs['mew_woo_attributes'];
             $attributes=array_combine($wooAttrs,$mewAttrs);
