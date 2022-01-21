@@ -1,5 +1,5 @@
 === WooCommerce - MuxEmail Add-on ===
-Contributors: liip, tschortsch
+Contributors: muxemail
 Donate link: https://muxemail.com/
 Tags: muxemail, email, marketing
 Requires at least: 4.5

@@ -176,7 +176,7 @@ if ( ! class_exists( 'MEW_Admin' ) ) {
                                     var loadWorkspaceOnPageLoad=true;
                                <?php } ?>
                              </script>   
-                            <input type="text" value="<?php echo $savedApiKey ?>" class="mew-setting-text" id="mew_api_key"><a title="<?php esc_html_e('Load Workspace','mew')?>" class="mewLoadWorkSpace" href="#"><span class="dashicons dashicons-download"></span></a>
+                            <input type="text" value="<?php echo esc_attr($savedApiKey) ?>" class="mew-setting-text" id="mew_api_key"><a title="<?php esc_html_e('Load Workspace','mew')?>" class="mewLoadWorkSpace" href="#"><span class="dashicons dashicons-download"></span></a>
                             <p><?php 
                             printf(
                                 esc_html__( "Find your MuxEmail API Key %s", "mew" ),
